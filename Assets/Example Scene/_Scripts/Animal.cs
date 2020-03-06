@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Animal : ScriptableObject
+public class Animal : ScriptableObject
 {
     public int legs;
+    public Animal[] array;
     public string sound;
 }

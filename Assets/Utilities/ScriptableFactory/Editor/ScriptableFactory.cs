@@ -140,8 +140,9 @@ namespace Utilities.ScriptableFactory
             var componentTypes =
                 Assembly.GetAssembly(typeof(T)).GetTypes().
                 Where(t =>
-                      t.IsSubclassOf(typeof(T)) &&
-                      !t.IsAbstract);
+                    (t == typeof(T) ||
+                    t.IsSubclassOf(typeof(T))) &&
+                    !t.IsAbstract);
 
             // Add them to list
             componentNames = new List<string>();
@@ -193,8 +194,8 @@ namespace Utilities.ScriptableFactory
                 //else
                 //{
                 string savePath = EditorUtility.SaveFilePanelInProject(
-                    "Save ScriptableObject", 
-                    component.name + ".asset", 
+                    "Save ScriptableObject",
+                    component.name + ".asset",
                     "asset",
                     "Save the ScriptableObject as an asset.",
                     AssetDatabase.GetAssetPath(Selection.activeObject) + "Assets"
@@ -204,7 +205,7 @@ namespace Utilities.ScriptableFactory
 
                 if (!string.IsNullOrEmpty(savePath))
                 {
-                    Debug.Log(savePath);
+                    Debug.Log(string.Format("Saved {0} at {1}", component.name, savePath));
                     AssetDatabase.CreateAsset(component, savePath);
                     AssetDatabase.SaveAssets();
 

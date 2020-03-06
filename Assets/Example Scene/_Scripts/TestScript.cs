@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Prueba : MonoBehaviour
+public class TestScript : MonoBehaviour
 {
     public Animal animal;
 }

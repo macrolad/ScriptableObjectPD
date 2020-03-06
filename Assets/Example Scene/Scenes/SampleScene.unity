@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 999129757}
   - component: {fileID: 999129756}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TestGO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a375c227198d0174cb18e896a61974e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalito: {fileID: 0}
+  animal: {fileID: 0}
 --- !u!4 &999129757
 Transform:
   m_ObjectHideFlags: 0
